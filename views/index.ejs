@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Adzuna Jobs</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+    <nav>
+        <ul class="nav-container">
+            <li><a href="/">Home</a></li>
+        </ul>
+    </nav>
+    <h1 style="text-align: center">Jobs Data</h1>
+
+     <form action="/" method="POST">
+        <label for="salary">Enter Desired Maximum Salary</label><br />
+        <input type="text" id="salary" name="salary" /><br />
+        <input type="hidden" name="hiddenFieldName" value="hiddenFieldValue">
+        <input type="submit" value="Submit" />
+    </form>
+
+    <div id="box-1">
+        <table>
+            <% if (typeof salary !=="undefined" ) { %>
+            <% salary.forEach((sal) => { %>
+                <tr><td><%= sal %></td></tr>
+            <% }); %>
+            <% }
+            else { %><td>nothing to see</td><% } %>
+        </table>
+    </div>
+</body>
+</html>
